@@ -18,7 +18,6 @@
 		<a class="btn rule dark"><em>活动规则</em></a>
 	</header>
 	<div id="main">
-		
 		<div class="header_title">
 			<h1>大奖摇一摇，秒变富天鹅</h1>
 		</div>
@@ -148,18 +147,13 @@ $(function(){
 	//摇一摇音效
 	//$(document).one('WeixinJSBridgeReady', function () {
 	$(document).one('touchstart',function (){
-        audio1.play();
-        audio1.setAttribute('src', '../style/media/shake_0.wav');
+		audio1.play();
+    	audio1.setAttribute('src', '../style/media/shake_0.wav');
         audio1.load();
 		audio2.play();
         audio2.setAttribute('src', '../style/media/shake_1.mp3');
         audio2.load();
-    })
-	
-	//重新抽奖
-	$(".pop .btn.cancel").on("click",function(){
-		//can=true;
-	});
+    });
 	
 	//摇一摇抽奖
     function init() {  
@@ -208,19 +202,6 @@ $(function(){
 	}
 	
 	init();
-	
-	function audio_play(id){
-		var audio=document.getElementById(id),
-			play=function(){
-				audio.play();
-				document.removeEventListener("touchstart",play,false);
-			};
-		audio.play();
-		document.addEventListener("WeixinJSBridgeReady",function(){
-		   play();
-		},false);
-		document.addEventListener("touchstart",play,false);
-	}
 });
 </script>
 </body>
