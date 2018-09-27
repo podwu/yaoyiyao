@@ -315,8 +315,9 @@ body{
 .footer img {display:block;width:100%;}
 
 .rule .body {padding:16px;}
-.rule .body>ul>li {padding:4px 0;line-height:1.25;}
+.rule .body>ul>li {padding:4px 0;line-height:1.45;font-size:14px;}
 .rule .body>ul>li li {line-height:1.25;padding:2px 0;}
+.pop.rule .box>header>h3 {color:#fa276b;font-weight:700;}
 
 .i_show {margin:-20px 20px 20px;}
 
