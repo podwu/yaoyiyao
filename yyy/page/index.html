@@ -141,9 +141,10 @@ $(function(){
 	var last_update=0;
 	var x=y=z=last_x=last_y=last_z=0;  
 	
+	
 	//摇一摇音效
-	//$(document).one('WeixinJSBridgeReady',function(){
-	$(document).one('touchstart',function(){
+	//$(document).one('WeixinJSBridgeReady', function () {
+	$(document).one('touchstart',function (){
 		audio1.play();
     	audio1.setAttribute('src', '../style/media/shake_0.wav');
         audio1.load();
@@ -176,9 +177,9 @@ $(function(){
 					shake_post();
 				}
             }
-            last_x = x;
-            last_y = y;
-            last_z = z;
+            last_x = x;  
+            last_y = y;  
+            last_z = z;  
         }  
     }
 	

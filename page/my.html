@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1,user-scalable=no">
+<link rel="stylesheet" href="../style/style.css">
+<title>我的奖品-大奖摇一摇·秒变富天鹅</title>
+</head>
+<body id="bd_my">
+<div id="wrapper" class="my">
+	<header id="header" class="header">
+		<div class="logo"><img src="../style/img/logo.png"></div>
+		<a href="index.html" class="btn"><em>返回活动</em></a>
+	</header>
+	<div id="main">
+		<div class="header_title">
+			<h1>大奖摇一摇，秒变富天鹅</h1>
+		</div>
+		<div class="prize_tip">
+			<div class="gr img"><img src="../image/gr.png"></div>
+			<dl class="info">
+				<dt>兑奖提示</dt>
+				<dd>兑奖时请将此页面出示给商家工作人员，由工作人员完成操作。</dd>
+				<dd>时间：2018-10-1~2018-10-8</dd>
+			</dl>
+		</div>
+		<div class="contact">
+			<ul>
+				<li>1、领奖电话：<b>0799－2088 898</b></li>
+				<li>2、领奖地址：<b>江西省萍乡市芦溪县怡和源旁处</b></li>
+				<li class="copyright">3、本活动解释权归溢源·香溢花城所有</li>
+			</ul>
+		</div>
+		<div class="prize_log">
+			<div class="com-tab">
+				<ul>
+					<li class="cur">未领奖</li>
+					<li>已领奖</li>
+					<li>已失效</li>
+				</ul>
+			</div>
+			<div class="main">
+				<div class="tab-box cur">
+					<table class="com-table">
+						<thead>
+							<tr>
+								<th>奖品名称</th>
+								<th>中奖时间</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>电饭煲</td>
+								<td>2018-09-27 15:12:12</td>
+								<td><a class="btn view"><em>领取奖品</em></a></td>
+							</tr>
+							<tr>
+								<td>电磁炉</td>
+								<td>2018-09-27 15:12:12</td>
+								<td><a class="btn view"><em>领取奖品</em></a></td>
+							</tr>
+							<tr>
+								<td>舒肤佳沐浴露</td>
+								<td>2018-09-27 15:12:12</td>
+								<td><a class="btn view"><em>领取奖品</em></a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="tab-box">
+					<table class="com-table">
+						<thead>
+							<tr>
+								<th>奖品名称</th>
+								<th>领奖时间</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>电饭煲</td>
+								<td>2018-09-27 15:12:12</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="tab-box">
+					<table class="com-table">
+						<thead>
+							<tr>
+								<th>奖品名称</th>
+								<th>中奖时间</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>充电宝</td>
+								<td>2018-09-27 15:12:12</td>
+							</tr>
+							<tr>
+								<td>大米</td>
+								<td>2018-09-27 15:12:12</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<img src="../image/bottom.png">
+		</footer>
+	</div>	
+</div>
+<div class="pop confirm mask prize">
+	<div class="box">
+		<header>
+			<h3>恭喜您中了“1袋大米”！</h3>
+		</header>
+		<div class="body">
+			<div class="img"><img src="../image/prize/08.jpg"></div>
+			<div class="keynum">
+				<input type="text" class="com-input" placeholder="点此输入兑换码">
+			</div>
+		</div>
+		<div class="action">
+			<a class="btn cancel"><em>取消</em></a>
+			<button type="button" class="btn dark"><em>确认领取</em></button>
+		</div>
+	</div>
+</div>
+<script src="../js/jquery.min.js"></script>
+<script>
+$(function(){
+	//领取奖品
+	$(".btn.view").on("click",function(e){
+		$(".pop.prize").slideDown(200);
+		e.stopPropagation(); 
+	});
+	//关闭弹出层
+	$(".pop .btn.close,.pop .btn.cancel").on("click",function(){
+		closePop();
+	});
+	$(document).click(function(e){
+		var _con = $('.pop>.box');   
+		if(!_con.is(e.target) && _con.has(e.target).length===0){ 
+			closePop();
+		}
+		e.stopPropagation(); 
+	});
+	function closePop(){$(".pop").slideUp(200);}
+	
+	//我的奖品列表
+	$(".com-tab>ul>li").on("click",function(){
+		$(this).addClass("cur").siblings().removeClass('cur');
+		$(".tab-box").eq($(this).index()).addClass("cur").siblings().removeClass('cur');
+	});
+
+});
+</script>
+</body>
+</html>
