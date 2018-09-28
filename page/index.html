@@ -48,9 +48,11 @@
 			</div>
 		</div>
 		<div class="i_show">
-			<div><img src="../image/show/01.jpg"></div>
 			<div><img src="../image/show/02.jpg"></div>
 			<div><img src="../image/show/03.jpg"></div>
+		</div>
+		<div class="i_show">
+			<div><img src="../image/show/01.jpg"></div>
 			<div><img src="../image/show/04.jpg"></div>
 		</div>
 		<footer class="footer">
@@ -80,10 +82,10 @@
 <div class="pop confirm mask prize">
 	<div class="box">
 		<header>
-			<h3>恭喜您中了“1袋大米”！</h3>
+			<h3>恭喜您中了“<b></b>”！</h3>
 		</header>
 		<div class="body">
-			<div class="img"><img src="../image/prize/08.jpg"></div>
+			<div class="img"><img src="."></div>
 		</div>
 		<div class="action">
 			<a class="btn" href="my.html"><em>查看奖品</em></a>
@@ -166,9 +168,9 @@ $(function(){
         if ((curTime - last_update) > 100) {  
             var diffTime = curTime - last_update;  
             last_update = curTime;  
-            x = acceleration.x;  
-            y = acceleration.y;  
-            z = acceleration.z;  
+            x = acceleration.x;
+            y = acceleration.y;
+            z = acceleration.z;
             var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;  
 
             if (speed > SHAKE_THRESHOLD) {  
@@ -189,15 +191,22 @@ $(function(){
 			$(".shake>.main").html('<img src="../style/img/shake_1.gif">');
 			can=false;
 			setTimeout(function(){
+				var cur_name="一袋大米";
+				var cur_img="08.jpg";
+				$(".pop.prize header>h3>b").text(cur_name);
+				$(".pop.prize .body .img>img").attr("src","../image/prize/"+cur_img);
 				audio2.play();
 				$(".shake>.main").html('<img src="../style/img/shake_0.png">');
 				$(".pop.prize").slideDown(200);
+				
 				shake_times=shake_times-1;
 				$("#times").html(shake_times);
             },2000);
 		}
 	}
 	init();
+	
+	
 });
 </script>
 </body>

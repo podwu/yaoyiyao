@@ -241,7 +241,6 @@ em,i {display:inline-block;vertical-align:middle;font-style:normal;}
 #main {
 	-webkit-flex:1;flex:1;
 	height:100%;
-	overflow-x:hidden;
 	overflow-y:auto;
 	-webkit-overflow-scrolling:touch;
 }
@@ -308,6 +307,7 @@ body{
 .i_prize>header {padding-bottom:24px;}
 .i_prize>header>h3 {font-size:24px;font-weight:700;color:#e95315;}
 .i_prize>.main>ul>li {margin-bottom:16px;}
+.i_prize>.main>ul>li:last-child {margin:0;}
 .i_prize>.main>ul>li img {display:block;width:100%;}
 
 
@@ -319,7 +319,7 @@ body{
 .rule .body>ul>li li {line-height:1.25;padding:2px 0;}
 .pop.rule .box>header>h3 {color:#fa276b;font-weight:700;}
 
-.i_show {margin:-20px 20px 20px;}
+.i_show {margin:0 20px 20px;}
 
 .pop.prize {text-align:center;}
 .pop.prize header>h3 {color:#e95315;font-size:14px;font-weight:700;}
@@ -378,6 +378,7 @@ body{
 	font-weight:400;
 	text-align:center; 
 	vertical-align:middle;
+	height:40px;
 }
 .com-table th {color:rgba(255,255,255,.62);height:40px;line-height:40px;padding:0;}
 .btn.view {height:24px;line-height:24px;border-radius:4px;background-color:#4694DC;}
@@ -393,7 +394,6 @@ body{
 	font-size:14px;
 	padding:4px;line-height:1.45;
 }
-
 .prize_tip {
 	display:-webkit-flex;
 	display:flex;

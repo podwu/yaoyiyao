@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="initial-scale=1.0,maximum-scale=1,user-scalable=no">
-<link rel="stylesheet" href="../style/style.css?20190928">
+<link rel="stylesheet" href="../style/style.css">
 <title>我的奖品-大奖摇一摇·秒变富天鹅</title>
 </head>
 <body id="bd_my">
@@ -16,22 +16,12 @@
 		<div class="header_title">
 			<h1>大奖摇一摇，秒变富天鹅</h1>
 		</div>
-<style>
-.my_info {padding:10px 10px 0;}
-.my_info>dl {
-	background-color:rgba(255,255,255,.2);
-	border-radius:4px;
-	padding:20px 0;
-	text-align:center;
-}
-.my_info>dl>dt {color:rgba(255,255,255,.8);} 
-.my_info>dl>.num {padding:4px 0;font-size:20px;}
-</style>
-		<div class="my_info">
-			<dl>
-				
-				<dd class="num">1234</dd>
-				<dt>用户码</dt>
+		<div class="prize_tip">
+			<div class="gr img"><img src="../image/gr.png"></div>
+			<dl class="info">
+				<dt>兑奖提示</dt>
+				<dd>兑奖时请将此页面出示给商家工作人员，由工作人员完成操作。</dd>
+				<dd>时间：2018-10-1~2018-10-8</dd>
 			</dl>
 		</div>
 		<div class="contact">
@@ -56,24 +46,24 @@
 							<tr>
 								<th>奖品名称</th>
 								<th>中奖时间</th>
-								<th>兑奖码</th>
+								<th>操作</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td class="prize_name" img-data="02.jpg">电饭煲</td>
+								<td>电饭煲</td>
 								<td>2018-09-27 15:12:12</td>
-								<td>12</td>
+								<td><a class="btn view"><em>领取奖品</em></a></td>
 							</tr>
 							<tr>
-								<td class="prize_name" img-data="03.jpg">电磁炉</td>
+								<td>电磁炉</td>
 								<td>2018-09-27 15:12:12</td>
-								<td>13</td>
+								<td><a class="btn view"><em>领取奖品</em></a></td>
 							</tr>
 							<tr>
-								<td class="prize_name" img-data="09.jpg">舒肤佳沐浴露</td>
+								<td>舒肤佳沐浴露</td>
 								<td>2018-09-27 15:12:12</td>
-								<td>134</td>
+								<td><a class="btn view"><em>领取奖品</em></a></td>
 							</tr>
 						</tbody>
 					</table>
@@ -121,13 +111,20 @@
 		</footer>
 	</div>	
 </div>
-<div class="pop mask prize">
+<div class="pop confirm mask prize">
 	<div class="box">
 		<header>
-			<h3></h3>
+			<h3>恭喜您中了“1袋大米”！</h3>
 		</header>
 		<div class="body">
-			<div class="img"><img src=""></div>
+			<div class="img"><img src="../image/prize/08.jpg"></div>
+			<div class="keynum">
+				<input type="text" class="com-input" placeholder="点此输入兑换码">
+			</div>
+		</div>
+		<div class="action">
+			<a class="btn cancel"><em>取消</em></a>
+			<button type="button" class="btn dark"><em>确认领取</em></button>
 		</div>
 	</div>
 </div>
@@ -135,11 +132,7 @@
 <script>
 $(function(){
 	//领取奖品
-	$(".prize_name").on("click",function(e){
-		var cur_name=$(this).text();
-		var cur_img=$(this).attr("img-data");
-		$(".pop.prize header>h3").text(cur_name);
-		$(".pop.prize .body .img>img").attr("src","../image/prize/"+cur_img);
+	$(".btn.view").on("click",function(e){
 		$(".pop.prize").slideDown(200);
 		e.stopPropagation(); 
 	});
@@ -161,19 +154,7 @@ $(function(){
 		$(this).addClass("cur").siblings().removeClass('cur');
 		$(".tab-box").eq($(this).index()).addClass("cur").siblings().removeClass('cur');
 	});
-	
-	pushHistory(); 
-    window.addEventListener("popstate", function(e) { 
-     	window.location = 'index.html';
-    }, false); 
-	
-    function pushHistory() { 
-      var state = { 
-        title: "title", 
-        url: "#"
-      }; 
-      window.history.pushState(state, "title", "#"); 
-    }
+
 });
 </script>
 </body>
